@@ -6,6 +6,9 @@
  document.getElementById('artist-name');
  const optionsDiv=
  document.getElementById('options');
+ const nextBtn = 
+ document.getElementById('next-btn'); // Botón siguiente
+
 
  //Lista de preguntas: cada una contiene un artista y tres canciones 
  const questions = [
@@ -25,7 +28,8 @@
     	options: ['Havana', 'Drunk', 'Cheap Thrills'],
     	correct: 1 // 'Drunk' es la correcta
     }
-    ]
+    ];
+ let currentQuestionIndex = 0; // Índice de la pregunta actual
 
     //Puedes añadir más preguntas aquí
 
@@ -33,7 +37,8 @@
     function startGame() {
     	startBtn.style.display='none'; //Esconder el botón
     	questionArea.style.display='block'; //Mostrar la sección del juego
-    	loadQuestion(0); //Cargar la primera pregunta
+    	loadQuestion(currentQuestionIndex); //Cargar la primera pregunta
+        nextBtn.style.display='none' //Ocultar boton next al empezar
     }
 
     //Función para cargar una pregunta
@@ -42,7 +47,7 @@
     questions[questionIndex];
     
     //Mostrar el nombre del artista
-    artistNameElement.textContent='Which of these songs belong to Taylor Swift {question.artist}?'; 
+    artistNameElement.textContent = `Which of these songs belong to ${question.artist}?`; 
 
     //Limpiar las opciones anteriores
     optionsDiv.innerHTML='';
@@ -70,8 +75,24 @@
 
     		alert('Incorrect')
     	}
+        nextBtn.style.display = 'block'; // Mostrar el botón de siguiente después de responder
 
     }
 
     //Evento para comenzar el juego al hacer clic
     startBtn.addEventListener('click', startGame);
+
+    //Evento para cargar la siguiente pregunta
+    nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion(currentQuestionIndex);
+        nextBtn.style.display = 'none'; // Ocultar el botón de siguiente hasta que respondan
+    } else {
+        alert('Thanks for playing!');
+        nextBtn.style.display = 'none'; // Ocultar el botón al final
+        startBtn.style.display = 'block'; // Mostrar el botón de inicio para jugar otra vez
+        currentQuestionIndex = 0; // Reiniciar el índice de las preguntas
+    }
+});
+
