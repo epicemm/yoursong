@@ -1,0 +1,62 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+header {
+	background-color: #1DB954;
+	color: floralwhite;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 3em;
+	margin: 0;
+}
+
+main {
+	margin-top: 50px;
+}
+
+#game-section {
+	margin: 20px;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 1.2em;
+	cursor: pointer;
+	background-color: #1DB954;
+	color: floralwhite;
+	border:none;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #17a34a;
+}
+
+#question-area {
+	margin-top: 20px;
+}
+#artist-name {
+	font-size: 1.5em;
+	font- font-weight: bold;
+}
+
+#options {
+	margin-top: 20px;
+}
+
+.options-btn {
+	margin: 5px;
+	padding: 10px 20px;
+	font-size: 1em;
+	cursor: pointer;
+	background-color: #ffcc00;
+	border: none;
+	border-radius: 5px;
+}
