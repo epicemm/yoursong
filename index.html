@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ing">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" 
+	      content="width=device-width
+	               initial-scale=1.0">
+	<title>Your Song</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+		<h1>YourSong</h1>
+		<p>Guess who</p>
+	</header>
+	<main>
+		<section id="game-section">
+			<button id="start-btn"> Start Game </button>
+			<div id="question-area" style= "display: none;">
+				<p id="artist-name"></p>
+			    <div id="options"></div>
+			</div>
+
+			<!-- Modal para el mensaje de respuesta correcta -->
+           <div id="modal" class="modal">
+             <div class="modal-content">
+               <span class="close-btn">&times;</span>
+               <p id="modal-text"></p>
+               <button id="next-btn" class="modal-next-btn">Next</button>
+
+             </div>
+           </div>
+
+		</section>
+	</main>
+    <script src="script.js"></script>
+</body>
+</html>
